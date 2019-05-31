@@ -1,0 +1,12 @@
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Data\bin\Debug\netcoreapp2.2\Agenda.Data.deps.json
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Data\bin\Debug\netcoreapp2.2\Agenda.Data.dll
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Data\bin\Debug\netcoreapp2.2\Agenda.Data.pdb
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Data\bin\Debug\netcoreapp2.2\Agenda.Domain.dll
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Data\bin\Debug\netcoreapp2.2\Agenda.Domain.pdb
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Data\obj\Debug\netcoreapp2.2\Agenda.Data.csprojAssemblyReference.cache
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Data\obj\Debug\netcoreapp2.2\Agenda.Data.csproj.CoreCompileInputs.cache
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Data\obj\Debug\netcoreapp2.2\Agenda.Data.AssemblyInfoInputs.cache
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Data\obj\Debug\netcoreapp2.2\Agenda.Data.AssemblyInfo.cs
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Data\obj\Debug\netcoreapp2.2\Agenda.Data.csproj.CopyComplete
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Data\obj\Debug\netcoreapp2.2\Agenda.Data.dll
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Data\obj\Debug\netcoreapp2.2\Agenda.Data.pdb

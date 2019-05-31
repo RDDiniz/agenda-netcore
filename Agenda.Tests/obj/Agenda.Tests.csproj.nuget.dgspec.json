@@ -1,0 +1,329 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Tests\\Agenda.Tests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda-API\\Agenda-API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda-API\\Agenda-API.csproj",
+        "projectName": "Agenda-API",
+        "projectPath": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda-API\\Agenda-API.csproj",
+        "packagesPath": "C:\\Users\\rdcyr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda-API\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\rdcyr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Data\\Agenda.Data.csproj": {
+                "projectPath": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Data\\Agenda.Data.csproj"
+              },
+              "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Domain\\Agenda.Domain.csproj": {
+                "projectPath": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Domain\\Agenda.Domain.csproj"
+              },
+              "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Services\\Agenda.Services.csproj": {
+                "projectPath": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Services\\Agenda.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Data\\Agenda.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Data\\Agenda.Data.csproj",
+        "projectName": "Agenda.Data",
+        "projectPath": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Data\\Agenda.Data.csproj",
+        "packagesPath": "C:\\Users\\rdcyr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\rdcyr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Domain\\Agenda.Domain.csproj": {
+                "projectPath": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Domain\\Agenda.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Domain\\Agenda.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Domain\\Agenda.Domain.csproj",
+        "projectName": "Agenda.Domain",
+        "projectPath": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Domain\\Agenda.Domain.csproj",
+        "packagesPath": "C:\\Users\\rdcyr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\rdcyr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Services\\Agenda.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Services\\Agenda.Services.csproj",
+        "projectName": "Agenda.Services",
+        "projectPath": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Services\\Agenda.Services.csproj",
+        "packagesPath": "C:\\Users\\rdcyr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\rdcyr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Tests\\Agenda.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Tests\\Agenda.Tests.csproj",
+        "projectName": "Agenda.Tests",
+        "projectPath": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Tests\\Agenda.Tests.csproj",
+        "packagesPath": "C:\\Users\\rdcyr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\rdcyr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda-API\\Agenda-API.csproj": {
+                "projectPath": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda-API\\Agenda-API.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.ViewFeatures": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.0.1, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

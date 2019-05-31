@@ -1,0 +1,11 @@
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Domain\bin\Debug\netcoreapp2.2\Agenda.Domain.deps.json
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Domain\bin\Debug\netcoreapp2.2\Agenda.Domain.dll
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Domain\bin\Debug\netcoreapp2.2\Agenda.Domain.pdb
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Domain\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.dll
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Domain\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.xml
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Domain\obj\Debug\netcoreapp2.2\Agenda.Domain.csproj.CoreCompileInputs.cache
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Domain\obj\Debug\netcoreapp2.2\Agenda.Domain.AssemblyInfoInputs.cache
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Domain\obj\Debug\netcoreapp2.2\Agenda.Domain.AssemblyInfo.cs
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Domain\obj\Debug\netcoreapp2.2\Agenda.Domain.csproj.CopyComplete
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Domain\obj\Debug\netcoreapp2.2\Agenda.Domain.dll
+C:\Users\rdcyr\source\repos\Agenda\Agenda.Domain\obj\Debug\netcoreapp2.2\Agenda.Domain.pdb
