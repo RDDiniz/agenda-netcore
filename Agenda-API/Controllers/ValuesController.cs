@@ -12,9 +12,9 @@ namespace Agenda_API.Controllers
     {
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return "API works...";
         }
 
         // GET api/values/5

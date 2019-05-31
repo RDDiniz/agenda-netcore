@@ -3205,11 +3205,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Data\\Agenda.Data.csproj",
+      "projectUniqueName": "C:\\src\\git\\projetos\\agenda-netcore\\Agenda.Data\\Agenda.Data.csproj",
       "projectName": "Agenda.Data",
-      "projectPath": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Data\\Agenda.Data.csproj",
+      "projectPath": "C:\\src\\git\\projetos\\agenda-netcore\\Agenda.Data\\Agenda.Data.csproj",
       "packagesPath": "C:\\Users\\rdcyr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Data\\obj\\",
+      "outputPath": "C:\\src\\git\\projetos\\agenda-netcore\\Agenda.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3228,8 +3228,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Domain\\Agenda.Domain.csproj": {
-              "projectPath": "C:\\Users\\rdcyr\\source\\repos\\Agenda\\Agenda.Domain\\Agenda.Domain.csproj"
+            "C:\\src\\git\\projetos\\agenda-netcore\\Agenda.Domain\\Agenda.Domain.csproj": {
+              "projectPath": "C:\\src\\git\\projetos\\agenda-netcore\\Agenda.Domain\\Agenda.Domain.csproj"
             }
           }
         }
