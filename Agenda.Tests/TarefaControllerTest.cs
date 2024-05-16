@@ -6,180 +6,176 @@ using Agenda.Tests.Framework;
 using Agenda_API.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Xunit;
 
-namespace Agenda.Tests
+namespace Agenda.Tests;
+
+public class TarefaControllerTest
 {
-    public class TarefaControllerTest
+    private TarefasController controller;
+    private ITarefaRepository repository;
+    private Guid tarefaId;
+
+    public TarefaControllerTest()
     {
-        private TarefasController controller;
-        private ITarefaRepository repository;
-        private Guid tarefaId;
+        var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
+        optionsBuilder.UseMySql(Constants.CONNECTION_STRING, ServerVersion.AutoDetect(Constants.CONNECTION_STRING));
+        var context = new ApplicationDbContext(optionsBuilder.Options);
 
-        public TarefaControllerTest()
+        repository = new TarefaRepository(context);
+        controller = new TarefasController(repository);
+    }
+
+    [Fact]
+    public void TestGetAll()
+    {
+        var okResult = controller.GetAll();
+
+        Assert.IsType<OkObjectResult>(okResult.Result);
+    }
+
+
+    [Fact]
+    public void TestGetByIdUnknownGuidReturnsNotFoundResult()
+    {
+        var notFoundResult = controller.GetById(Guid.NewGuid());
+
+        Assert.IsType<NotFoundResult>(notFoundResult.Result);
+    }
+
+
+    [Fact]
+    public void CreateInvalidObjectReturnsBadRequest()
+    {
+        var tarefa = new Tarefa()
         {
-            var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            optionsBuilder.UseMySql(Constants.CONNECTION_STRING);
-            var context = new ApplicationDbContext(optionsBuilder.Options);
+            UsuarioId = Guid.NewGuid(),
+            Descricao = "Testes"
+        };
+        controller.ModelState.AddModelError("Data", "Required");
 
-            repository = new TarefaRepository(context);
-            controller = new TarefasController(repository);
-        }
+        var badResponse = controller.Create(tarefa);
 
-        [Fact]
-        public void TestGetAll()
+        Assert.IsType<BadRequestResult>(badResponse);
+    }
+
+    [Fact]
+    public void CreateValidObjectReturnsCreatedResponse()
+    {
+
+        var tarefa = new Tarefa()
         {
-            var okResult = controller.GetAll();
+            UsuarioId = Guid.Parse("9042c02a-af97-47b3-278c-08d6e572fa68"),
+            Descricao = "Testes",
+            Data = DateTime.Now
+        };
 
-            Assert.IsType<OkObjectResult>(okResult.Result);
-        }
+        var createdResponse = controller.Create(tarefa);
 
+        Assert.IsType<CreatedAtRouteResult>(createdResponse);
+    }
 
-        [Fact]
-        public void TestGetByIdUnknownGuidReturnsNotFoundResult()
+    [Fact]
+    public void CreateValidObjectReturnedResponseHasCreatedItem()
+    {
+        var tarefa = new Tarefa()
         {
-            var notFoundResult = controller.GetById(Guid.NewGuid());
+            UsuarioId = Guid.Parse("9042c02a-af97-47b3-278c-08d6e572fa68"),
+            Descricao = "Testes",
+            Data = DateTime.Now
+        };
 
-            Assert.IsType<NotFoundResult>(notFoundResult.Result);
-        }
+        var createdResponse = controller.Create(tarefa) as CreatedAtRouteResult;
+        var item = createdResponse.Value as Tarefa;
+        tarefaId = item.Id;
 
+        Assert.IsType<Tarefa>(item);
+        Assert.Equal(Guid.Parse("9042c02a-af97-47b3-278c-08d6e572fa68"), item.UsuarioId);
+    }
 
-        [Fact]
-        public void CreateInvalidObjectReturnsBadRequest()
+    [Fact]
+    public void UpdateNotExistingGuidReturnsNotFoundResponse()
+    {
+        var notExistingGuid = Guid.NewGuid();
+
+        var tarefa = new Tarefa()
         {
-            var tarefa = new Tarefa()
-            {
-                UsuarioId = Guid.NewGuid(),
-                Descricao = "Testes"
-            };
-            controller.ModelState.AddModelError("Data", "Required");
+            Id = notExistingGuid,
+            UsuarioId = Guid.Parse("9042c02a-af97-47b3-278c-08d6e572fa68"),
+            Descricao = "Testes",
+            Data = DateTime.Now
+        };
 
-            var badResponse = controller.Create(tarefa);
+        var notFondResponse = controller.Update(notExistingGuid, tarefa);
 
-            Assert.IsType<BadRequestResult>(badResponse);
-        }
+        Assert.IsType<NotFoundResult>(notFondResponse);
+    }
 
-        [Fact]
-        public void CreateValidObjectReturnsCreatedResponse()
+    [Fact]
+    public void UpdateGuidEmptyReturnsBadRequestResponse()
+    {
+        var notExistingGuid = Guid.Empty;
+
+        var tarefa = new Tarefa()
         {
+            Id = notExistingGuid,
+            UsuarioId = Guid.Parse("9042c02a-af97-47b3-278c-08d6e572fa68"),
+            Descricao = "Testes",
+            Data = DateTime.Now
+        };
 
-            var tarefa = new Tarefa()
-            {
-                UsuarioId = Guid.Parse("9042c02a-af97-47b3-278c-08d6e572fa68"),
-                Descricao = "Testes",
-                Data = DateTime.Now
-            };
+        var badRequestResponse = controller.Update(notExistingGuid, tarefa);
 
-            var createdResponse = controller.Create(tarefa);
+        Assert.IsType<BadRequestResult>(badRequestResponse);
+    }
 
-            Assert.IsType<CreatedAtRouteResult>(createdResponse);
-        }
+    [Fact]
+    public void UpdateGuidNotEqualTaskGuidReturnsBadRequestResponse()
+    {
+        var notExistingGuid = Guid.NewGuid();
 
-        [Fact]
-        public void CreateValidObjectReturnedResponseHasCreatedItem()
+        var tarefa = new Tarefa()
         {
-            var tarefa = new Tarefa()
-            {
-                UsuarioId = Guid.Parse("9042c02a-af97-47b3-278c-08d6e572fa68"),
-                Descricao = "Testes",
-                Data = DateTime.Now
-            };
+            Id = Guid.NewGuid(),
+            UsuarioId = Guid.Parse("9042c02a-af97-47b3-278c-08d6e572fa68"),
+            Descricao = "Testes",
+            Data = DateTime.Now
+        };
 
-            var createdResponse = controller.Create(tarefa) as CreatedAtRouteResult;
-            var item = createdResponse.Value as Tarefa;
-            tarefaId = item.Id;
+        var badRequestResponse = controller.Update(notExistingGuid, tarefa);
 
-            Assert.IsType<Tarefa>(item);
-            Assert.Equal(Guid.Parse("9042c02a-af97-47b3-278c-08d6e572fa68"), item.UsuarioId);
-        }
+        Assert.IsType<BadRequestResult>(badRequestResponse);
+    }
 
-        [Fact]
-        public void UpdateNotExistingGuidReturnsNotFoundResponse()
-        {
-            var notExistingGuid = Guid.NewGuid();
+    [Fact]
+    public void DeleteNotExistingGuidReturnsNotFoundResponse()
+    {
+        var notExistingGuid = Guid.NewGuid();
 
-            var tarefa = new Tarefa()
-            {
-                Id = notExistingGuid,
-                UsuarioId = Guid.Parse("9042c02a-af97-47b3-278c-08d6e572fa68"),
-                Descricao = "Testes",
-                Data = DateTime.Now
-            };
+        var notFondResponse = controller.Delete(notExistingGuid);
 
-            var notFondResponse = controller.Update(notExistingGuid, tarefa);
+        Assert.IsType<NotFoundResult>(notFondResponse);
+    }
 
-            Assert.IsType<NotFoundResult>(notFondResponse);
-        }
+    [Fact]
+    public void DeleteGuidEmptyReturnsBadRequestResponse()
+    {
+        var guidEmpty = Guid.Empty;
 
-        [Fact]
-        public void UpdateGuidEmptyReturnsBadRequestResponse()
-        {
-            var notExistingGuid = Guid.Empty;
+        var badResponse = controller.Delete(guidEmpty);
 
-            var tarefa = new Tarefa()
-            {
-                Id = notExistingGuid,
-                UsuarioId = Guid.Parse("9042c02a-af97-47b3-278c-08d6e572fa68"),
-                Descricao = "Testes",
-                Data = DateTime.Now
-            };
+        Assert.IsType<BadRequestResult>(badResponse);
+    }
 
-            var badRequestResponse = controller.Update(notExistingGuid, tarefa);
+    [Fact]
+    public void DeleteExistingGuidReturnsOkResult()
+    {
+        var tarefaResponse = controller.GetByUserId(Guid.Parse("9042c02a-af97-47b3-278c-08d6e572fa68")) as ObjectResult;
+        var tarefas = new List<Tarefa>((IEnumerable<Tarefa>)tarefaResponse.Value);
+        var tarefa = tarefas.First();
+        
+        var response = controller.Delete(tarefa.Id);
 
-            Assert.IsType<BadRequestResult>(badRequestResponse);
-        }
-
-        [Fact]
-        public void UpdateGuidNotEqualTaskGuidReturnsBadRequestResponse()
-        {
-            var notExistingGuid = Guid.NewGuid();
-
-            var tarefa = new Tarefa()
-            {
-                Id = Guid.NewGuid(),
-                UsuarioId = Guid.Parse("9042c02a-af97-47b3-278c-08d6e572fa68"),
-                Descricao = "Testes",
-                Data = DateTime.Now
-            };
-
-            var badRequestResponse = controller.Update(notExistingGuid, tarefa);
-
-            Assert.IsType<BadRequestResult>(badRequestResponse);
-        }
-
-        [Fact]
-        public void DeleteNotExistingGuidReturnsNotFoundResponse()
-        {
-            var notExistingGuid = Guid.NewGuid();
-
-            var notFondResponse = controller.Delete(notExistingGuid);
-
-            Assert.IsType<NotFoundResult>(notFondResponse);
-        }
-
-        [Fact]
-        public void DeleteGuidEmptyReturnsBadRequestResponse()
-        {
-            var guidEmpty = Guid.Empty;
-
-            var badResponse = controller.Delete(guidEmpty);
-
-            Assert.IsType<BadRequestResult>(badResponse);
-        }
-
-        [Fact]
-        public void DeleteExistingGuidReturnsOkResult()
-        {
-            var tarefaResponse = controller.GetByUserId(Guid.Parse("9042c02a-af97-47b3-278c-08d6e572fa68")) as ObjectResult;
-            var tarefas = new List<Tarefa>((IEnumerable<Tarefa>)tarefaResponse.Value);
-            var tarefa = tarefas.First();
-            
-            var response = controller.Delete(tarefa.Id);
-
-            Assert.IsType<NoContentResult>(response);
-        }
+        Assert.IsType<NoContentResult>(response);
     }
 }

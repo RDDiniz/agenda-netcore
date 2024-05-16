@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace Agenda.Domain.RepositoryInterfaces;
 
-namespace Agenda.Domain.RepositoryInterfaces
+public interface IRepository<TEntity> : IDisposable where TEntity : class
 {
-    public interface IRepository<TEntity> : IDisposable where TEntity : class
-    {
-        void Add(TEntity obj);
+    void Add(TEntity obj);
 
-        TEntity GetById(Guid id);
+    TEntity GetById(Guid id);
 
-        IEnumerable<TEntity> GetAll();
+    IEnumerable<TEntity> GetAll();
 
-        void Update(TEntity obj);
+    void Update(TEntity obj);
 
-        void Remove(Guid id);
-    }
+    void Remove(Guid id);
 }

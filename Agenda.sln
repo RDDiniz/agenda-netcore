@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28922.388
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agenda-API", "Agenda-API\Agenda-API.csproj", "{400FB3DA-2794-4DE1-81EF-C2C0A11C3C28}"
 EndProject
@@ -11,9 +11,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agenda.Domain", "Agenda.Dom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agenda.Services", "Agenda.Services\Agenda.Services.csproj", "{37614E11-23ED-4081-9063-D4C14948CDA0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6348CF21-F801-4102-A354-E056F5295C3E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Test", "0 - Test", "{6348CF21-F801-4102-A354-E056F5295C3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agenda.Tests", "Agenda.Tests\Agenda.Tests.csproj", "{07C82CB0-40E8-4D15-BAC9-1C0AA0D39B95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agenda.Tests", "Agenda.Tests\Agenda.Tests.csproj", "{07C82CB0-40E8-4D15-BAC9-1C0AA0D39B95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Core", "1 - Core", "{3E8BAF15-81FA-4580-AF46-9D28F4769245}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Infrastructure", "2 - Infrastructure", "{3C4C0AAA-D453-4EB7-8E56-C601C5F450A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Presentation", "3 - Presentation", "{08D3658F-82CD-4F27-9748-114E3385C92C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +52,10 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{400FB3DA-2794-4DE1-81EF-C2C0A11C3C28} = {08D3658F-82CD-4F27-9748-114E3385C92C}
+		{F2A883D8-315C-4478-B8DB-B6D71F526CB2} = {3C4C0AAA-D453-4EB7-8E56-C601C5F450A1}
+		{E5D05341-3E31-4FFB-A11E-6774355210FE} = {3E8BAF15-81FA-4580-AF46-9D28F4769245}
+		{37614E11-23ED-4081-9063-D4C14948CDA0} = {3E8BAF15-81FA-4580-AF46-9D28F4769245}
 		{07C82CB0-40E8-4D15-BAC9-1C0AA0D39B95} = {6348CF21-F801-4102-A354-E056F5295C3E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
